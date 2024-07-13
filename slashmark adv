@@ -1,0 +1,48 @@
+# Define a class for the insurance policy
+class InsurancePolicy:
+    def __init__(self, policy_type, coverage_amount, risk_level):
+        self.policy_type = policy_type
+        self.coverage_amount = coverage_amount
+        self.risk_level = risk_level
+
+    def calculate_premium(self):
+        # Calculate the premium based on the policy type and risk level
+        if self.policy_type == 'otor':
+            if self.risk_level == 'low':
+                premium_rate = 0.05
+            elif self.risk_level == 'edium':
+                premium_rate = 0.10
+            else:
+                premium_rate = 0.15
+        elif self.policy_type == 'property':
+            if self.risk_level == 'low':
+                premium_rate = 0.03
+            elif self.risk_level == 'edium':
+                premium_rate = 0.06
+            else:
+                premium_rate = 0.09
+        elif self.policy_type == 'travel':
+            if self.risk_level == 'low':
+                premium_rate = 0.02
+            elif self.risk_level == 'edium':
+                premium_rate = 0.04
+            else:
+                premium_rate = 0.06
+        elif self.policy_type == 'health':
+            if self.risk_level == 'low':
+                premium_rate = 0.01
+            elif self.risk_level == 'edium':
+                premium_rate = 0.02
+            else:
+                premium_rate = 0.03
+
+        premium = self.coverage_amount * premium_rate
+        return premium
+
+# Create an instance of the InsurancePolicy class
+policy = InsurancePolicy('motor', 100000, 'edium')
+
+# Calculate the premium
+premium = policy.calculate_premium()
+
+print('The premium for this policy is:', premium)
